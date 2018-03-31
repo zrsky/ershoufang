@@ -242,9 +242,9 @@ Page({
      msg: '提交成功',
    })
  },
- formReset: function () {
-   console.log('form发生了reset事件')
- },
+//  formReset: function () {
+//    console.log('form发生了reset事件')
+//  },
  initValidate() {
    // 验证字段的规则
    const rules = {
