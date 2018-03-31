@@ -1,0 +1,16 @@
+.slide{
+  width: 100%
+}
+.slide swiper {
+  height: 480rpx;
+}
+.slide swiper image {
+  height: 100%;
+  width: 100%;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

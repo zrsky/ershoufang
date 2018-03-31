@@ -1,0 +1,175 @@
+<view class="ershoufang">
+  <view class="remind">
+    <text>请填写你售卖车辆的信息</text>
+  </view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <block wx:for="{{category}}" wx:key="{{id}}">
+      <view class="message-wrapper" wx:if="{{!item.prefix}}">
+        <view class="category">
+          <text wx:if="{{item.need}}" class="need">*</text>
+          <text class="category-name">{{item.title}}</text>
+        </view>
+        <textarea wx:if="{{item.id == 6}}" class="write" placeholder='{{item.placeholder}}' name="{{item.name}}"></textarea>
+
+        <view class="weui-cell__bd" wx:elif="{{item.type=='date'}}" fields="year" class="write">
+          <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+            <input disabled class="write date" value="{{date}}" name="{{item.name}}"></input>
+          </picker>
+        </view>
+        <view class="weui-cell__bd" wx:elif="{{item.type=='date1'}}" class="write">
+          <picker mode="date" value="{{date1}}" bindchange="bindDateChange1">
+            <view class="weui-input">
+              <input disabled class="write date" value="{{date1}}" name="{{item.name}}"></input>
+            </view>
+          </picker>
+        </view>
+        <input wx:else class="write" type="number" placeholder="{{item.placeholder}}" name="{{item.name}}"></input>
+      </view>
+      <view class="message-wrapper has-prefix" wx:elif="{{item.prefix}}">
+        <view class="category">
+          <text wx:if="{{item.need}}" class="need">*</text>
+          <text class="category-name">{{item.title}}</text>
+        </view>
+        <textarea wx:if="{{item.id == 6}}" class="write" placeholder='{{item.placeholder}}' name="{{item.name}}" ></textarea>
+        <view class="weui-cell__bd" wx:elif="{{item.type=='date'}}" class="write">
+          <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <input disabled class="weui-input" class="date" value="{{date}}" name="{{item.name}}"></input>
+          </picker>
+        </view>
+        <view class="weui-cell__bd" wx:elif="{{item.type=='date1'}}" class="write">
+          <picker mode="date" value="{{date1}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange1">
+            <input disabled class="weui-input" class="date" value="{{date1}}" name="{{item.name}}"></input>
+          </picker>
+        </view>
+        <input wx:else class="write" type="number" placeholder="{{item.placeholder}}" name="{{item.name}}"></input>
+        <text class="prefix-name">{{item.prefix}}</text>
+      </view>
+    </block>
+
+    <view class="split">
+    </view>
+
+    <view class="upload-photoes-wrapper">
+      <view class="message-wrapper">
+        <view class="category">
+          <text class="need">*</text>
+          <text class="category-name">车辆照片（点击下面方上传）</text>
+        </view>
+        <text class="prefix-name num">{{imageList.length}}/9</text>
+      </view>
+
+      <view class="upload-photo-box">
+        <!-- <block wx:for="{{imageList}}">
+        <view>
+          <image class="img" src="{{item}}"></image>
+        </view>
+      </block> -->
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files">
+            <block wx:for="{{imageList}}" wx:for-item="image">
+              <view class="weui-uploader__file">
+                <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+              </view>
+            </block>
+          </view>
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImageTap">
+            </view>
+            
+          </view>
+        </view>
+      </view>
+      <view class="alert">
+        上传一张带有车辆铭牌或行驶证的照片方便买家查询保养记录。
+      </view>
+    </view>
+    <view class="upload-photoes-wrapper">
+      <view class="message-wrapper">
+        <view class="category">
+          <text class="need">*</text>
+          <text class="category-name">您的微信二维码</text>
+        </view>
+      </view>
+      <view class="upload-photo-box">
+        <view class="weui-uploader__bd">
+          <view class="weui-uploader__files">
+            <block wx:for="{{imageList1}}" wx:for-item="image">
+              <view class="weui-uploader__file">
+                <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage1"></image>
+              </view>
+            </block>
+          </view>
+          <view class="weui-uploader__input-box">
+            <view class="weui-uploader__input" bindtap="chooseImageTap1"></view>
+          </view>
+        </view>
+      </view>
+      <view class="alert">
+        上传一张联系到您的微信二维码，方便及时沟通。
+      </view>
+    </view>
+    <view class="message-wrapper" style="border:0;">
+      <view class="category">
+        <text class="need">*</text>
+        <text class="category-name" name="color_id">车体颜色</text>
+      </view>
+      <picker class="write" bindchange="bindColorChange" value="{{index}}" range="{{color}}">
+        <view class="picker">
+          <input disabled class="write" value="{{color[index]}}" name="{{item.name}}"></input>
+        </view>
+      </picker>
+    </view>
+    <view class="split">
+    </view>
+    <view class="message-wrapper" style="border:0;">
+      <view class="category">
+        <text class="category-name">新车未上牌</text>
+      </view>
+      <radio-group class="radio-group write" bindchange="radioChange">
+        <label class="radio">
+          <radio name="{{item.value}}"/>
+          <text class="yes">是</text>
+          <radio name="{{item.name}}" checked/>
+          <text class="no">否</text>
+        </label>
+      </radio-group>
+    </view>
+    <block wx:for="{{category1}}" wx:key="{{id}}">
+      <view class="message-wrapper" wx:if="{{!item.prefix}}">
+        <view class="category">
+          <text wx:if="{{item.need}}" class="need">*</text>
+          <text class="category-name">{{item.title}}</text>
+        </view>
+        <picker wx:if="{{item.type == 'standard'}}" class="write" bindchange="bindStandardChange" value="{{sIndex}}" range="{{standard}}">
+          <view class="picker standard">
+            <input class="write" disabled value="{{standard[sIndex]}}" name="{{item.name}}"></input>
+          </view>
+        </picker>
+        <picker wx:elif="{{item.type == 'year'}}" class="write" bindchange="bindYearChange" value="{{yIndex}}" range="{{year}}">
+          <view class="picker year">
+            <input class="write" disabled value="{{year[yIndex]}}" name="{{item.value}}"></input>
+          </view>
+        </picker>
+        <picker mode="multiSelector" wx:elif="{{item.type == 'address'}}" class="write" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class="picker year">
+            <input class="write" disabled value="{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}"></input>
+          </view>
+        </picker>
+
+        <input wx:else class="write" type="text" placeholder="{{item.placeholder}}" name="{{item.name}}"></input>
+      </view>
+      <view class="message-wrapper has-prefix" wx:elif="{{item.prefix}}">
+        <view class="category">
+          <text wx:if="{{item.need}}" class="need">*</text>
+          <text class="category-name">{{item.title}}</text>
+        </view>
+        <input class="write" type="text" placeholder="{{item.placeholder}}" name="{{item.name}}"></input>
+        <text class="prefix-name">{{item.prefix}}</text>
+      </view>
+    </block>
+    <view class="btn-area">
+      <button class="btnSubmit" formType="submit">提交</button>
+      <!-- <button formType="reset">Reset</button> -->
+    </view>
+  </form>
+</view>

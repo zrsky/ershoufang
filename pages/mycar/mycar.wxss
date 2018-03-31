@@ -1,0 +1,181 @@
+/* pages/mycar/mycar.wxss */
+@import "../common/lib/weui.wxss";
+.container{
+  background-color: #EAEAEA;
+}
+.search{
+  background-color: #EAEAEA;
+}
+.top{
+  display: flex;
+  width: 100%;
+  padding: 30rpx;
+  align-items: center;
+}
+.top input{
+  background-color: #D5D5D5;
+  vertical-align: middle;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.start,.end{
+  padding-left:10rpx; 
+  flex: 0 0 50rpx; 
+}
+.search text{
+  margin: 0 20rpx;
+}
+.startdate,.enddate{
+  margin-left:5rpx; 
+  text-align: center;
+  flex: 0 0 30%;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.weui-cell{
+  padding: 0;
+}
+.weui-input{
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.weui-cells{
+  position: static;
+  background-color:#D5D5D5;
+}
+
+.search-bottom{
+  display: flex;
+  padding: 30rpx;
+  padding-top:0rpx; 
+  align-items: center;
+}
+.search-bottom input{
+  flex: 60%;
+  padding-left:10rpx; 
+  background-color:#D5D5D5;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.search-bottom button{
+  margin-left:10rpx; 
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color:#ff7700;
+  color: #fff; 
+}
+
+.list {
+  height: 100%;
+}
+.list .item {
+  display: flex;
+  padding: 20rpx 40rpx;
+  border-bottom: 1rpx solid #eee;
+  cursor: pointer;
+}
+.list .item .poster {
+  width: 128rpx;
+  height: 168rpx;
+  margin-right: 20rpx;
+}
+.list .item .meta {
+  flex: 1;
+}
+.list .item .meta .title,
+.list .item .meta .sub-title {
+  display: block;
+  margin-bottom: 15rpx;
+}
+.list .item .meta .artists {
+  display: block;
+  margin-bottom: 15rpx;
+}
+.list .item .meta .title{
+  font-size: 32rpx;
+}
+.list .item .meta .sub-title {
+  font-size: 32rpx;
+}
+.list .item .meta .artists {
+  font-size: 32rpx;
+}
+.list .item .meta .price{
+  font-size: 32rpx;
+  color: red;
+}
+.list .item .rating text {
+  display: inline-block;
+  width: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(247, 76, 49, 0.8);
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 20rpx;
+}
+.list .tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}
+.list .tips image,
+.list .tips text {
+  vertical-align: middle;
+}
+.list .tips image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.header {
+  display: flex;
+  padding: 20rpx,0;
+  justify-content: center;
+  border-bottom: 1rpx solid #ccc;
+}
+.header text {
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 38rpx;
+  text-align: center;
+}
+.info{
+  padding-top: 20%;
+  width: 100%;
+  text-align: center;
+}
+.info button{
+  width: 100%;
+  background-color: #ff8b02;
+  color: #fff;
+}
+
+.carlist{
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+
+.list-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.list-info view{
+  flex: 1;
+  text-align: center;
+}
+.sellerPhone{
+  padding: 30rpx;
+  text-align: center;
+  /* border-bottom: 1rpx solid #eee; */
+  color: red;
+}
+
+
+

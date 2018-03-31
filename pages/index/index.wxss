@@ -1,0 +1,142 @@
+.list {
+  height: 100%;
+}
+.list .item {
+  display: flex;
+  padding: 20rpx 40rpx;
+  border-bottom: 1rpx solid #eee;
+  cursor: pointer;
+}
+.list .item .poster {
+  width: 128rpx;
+  height: 168rpx;
+  margin-right: 20rpx;
+}
+.list .item .meta {
+  flex: 1;
+}
+.list .item .meta .title,
+.list .item .meta .sub-title {
+  display: block;
+  margin-bottom: 15rpx;
+}
+.list .item .meta .artists {
+  display: block;
+  margin-bottom: 15rpx;
+}
+.list .item .meta .title{
+  font-size: 32rpx;
+}
+.list .item .meta .sub-title {
+  font-size: 32rpx;
+}
+.list .item .meta .artists {
+  font-size: 32rpx;
+}
+.list .item .meta .price{
+  font-size: 32rpx;
+  color: red;
+}
+.list .item .rating text {
+  display: inline-block;
+  width: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(247, 76, 49, 0.8);
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 20rpx;
+}
+.list .tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}
+.list .tips image,
+.list .tips text {
+  vertical-align: middle;
+}
+.list .tips image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.header {
+  display: flex;
+  padding: 20rpx,0;
+  justify-content: center;
+}
+.header text {
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 38rpx;
+  text-align: center;
+}
+.info{
+  padding-top: 20%;
+  width: 100%;
+  text-align: center;
+}
+.info button{
+  width: 100%;
+  background-color: #ff8b02;
+  color: #fff;
+}
+
+.list-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.list-info view{
+  flex: 1;
+  text-align: center;
+}
+.sellerPhone{
+  padding: 30rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+  color: red;
+}
+.carlist{
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+
+.container{
+  background-color: #EAEAEA;
+}
+.header{
+  display: flex;
+  padding: 30rpx;
+}
+.header input{
+  padding-left: 10rpx;
+  background-color: #D5D5D5;
+}
+.header button{
+  background-color: #ff7700;
+  color: #fff;
+  margin-left: 10rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+
+.operation{
+  display: flex;
+  padding: 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.operation text{
+  display: inline-block;
+  flex: 1;
+  text-align: center;
+}
+
+.operation :first-child{
+  border-right: 1rpx solid #eee;
+}

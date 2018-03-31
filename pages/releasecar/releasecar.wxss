@@ -1,0 +1,151 @@
+/**index.wxss**/
+
+/* page, .ershoufang {
+  background: #EEEEEE;
+}
+.form {
+  height: 90%;
+  background:#fff;
+} */
+.ershoufang .remind {
+  font-size: 30rpx;
+  text-align: center;
+  padding: 30rpx;
+  background: #EBEBEB;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.ershoufang .message-wrapper {
+  display: flex;
+  /* align-items: center; */
+  margin: 0 20rpx;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+}
+.ershoufang .message-wrapper ~ .message-wrapper {
+  border-top: 1px solid #E8E6E6;
+}
+.ershoufang .message-wrapper:nth-last-child(2){
+  border-bottom: 1px solid #E8E6E6;
+}
+.ershoufang .message-wrapper .color,
+.ershoufang .message-wrapper .standard,
+.ershoufang .message-wrapper .address,
+.ershoufang .message-wrapper .year,
+.ershoufang .message-wrapper .date {
+  opacity: .6;
+}
+.ershoufang .message-wrapper .category {
+  flex: 0.8;
+  display:flex;
+  align-items:center;
+
+}
+.ershoufang .message-wrapper .write {
+  flex: 2
+}
+.ershoufang .message-wrapper textarea.write {
+  height:150rpx;
+}
+.ershoufang .message-wrapper .prefix-name {
+  flex: 0.5;
+}
+.ershoufang .message-wrapper .category .need {
+  color:red;
+}
+.ershoufang .message-wrapper .radio .yes {
+  margin-right: 30rpx;
+}
+.ershoufang .has-prefix .category {
+  flex: 1;
+}
+.ershoufang .has-prefix .write {
+  flex: 2
+}
+.ershoufang .split {
+  height:40rpx;
+  background: #EBEBEB;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.ershoufang .upload-photoes-wrapper {
+  /* margin: 0 10rpx!important; */
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #E8E6E6;
+}
+.ershoufang .upload-photoes-wrapper .message-wrapper .category {
+    flex:5;
+}
+.ershoufang .upload-photoes-wrapper .message-wrapper .num {
+  color:#999;
+}
+.ershoufang .upload-photoes-wrapper .upload-photo-box {
+  padding: 0 20px;
+}
+.ershoufang .upload-photoes-wrapper .upload-photo-box .box {
+  display:inline-block;
+  font-size: 80rpx;
+  color: #E8E6E6;
+  padding: 20rpx 40rpx;
+  border: 2px solid #E8E6E6;
+  margin: 0 30rpx 15rpx 30rpx; 
+}
+.ershoufang .upload-photoes-wrapper .upload-photo-box .img {
+  width: 170rpx;
+  height:170rpx
+}
+.ershoufang .upload-photoes-wrapper .alert {
+  color: #FF7800;
+  font-size: 30rpx;
+  margin:0 20rpx;
+}
+.ershoufang .btn-area .btnSubmit {
+  background: #0EAB00;
+  width: 80%;
+  color: #fff;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.weui-uploader__bd {
+margin-bottom:-4px;
+margin-right:-9px;
+overflow:hidden;
+}
+.weui-uploader__file {
+float:left;
+margin-right:9px;
+margin-bottom:9px;
+
+}
+.weui-uploader__input-box {
+float:left;
+position:relative;
+margin-right:9px;
+margin-bottom:9px;
+width:77px;
+height:77px;
+border:1px solid #D9D9D9;
+
+}
+.weui-uploader__img {
+display:block;
+width:79px;
+height:79px;
+}
+.weui-uploader__input {
+position:absolute;
+z-index:1;
+top:0;
+left:0;
+width:100%;
+height:100%;
+opacity:0;
+
+}
+.weui-uploader__input::before {
+  content:'';
+  height:1px;
+  width: 40px;
+  display:block;
+  border:1px solid #D9D9D9;
+}

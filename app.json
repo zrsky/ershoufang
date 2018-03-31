@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mycar/mycar",
+    "pages/detail/detail",
+            "pages/releasecar/releasecar"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "二手车批发神器",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ff8b02",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的发布",
+        "iconPath": "images/icon-myrelease.png",
+        "selectedIconPath": "images/icon-myrelease-select.png"
+      },
+      {
+        "pagePath": "pages/releasecar/releasecar",
+        "text": "我要发布",
+        "iconPath": "images/icon-realese.png",
+        "selectedIconPath": "images/icon-release-select.png"
+      },
+      {
+        "pagePath": "pages/mycar/mycar",
+        "text": "全部车源",
+        "iconPath": "images/icon-more.png",
+        "selectedIconPath": "images/icon-more-select.png"
+      }
+    ]
+  }
+}

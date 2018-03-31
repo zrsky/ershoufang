@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<import src="../common/carlist"/>
+<view class="container">
+<view class='info' wx:if="{{!hasInfo}}">
+  <text>您暂时还未发布过车辆</text>
+  <button bindtap='relCar'>发布我的车源</button>
+</view>
+<block wx:else>
+  <view class='header'>
+  <input class='search' placeholder='请在此输入搜索内容' placeholder-class='search-placeholder' bindinput='handleSearch'></input>
+  <button>确定</button>
+  </view>
+  <template is="carlist" data="{{cars,loading,hasMore,isSeller}}"/>
+  </block>
+</view>

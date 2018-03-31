@@ -1,0 +1,82 @@
+<!-- 渲染普通的单项数据 -->
+<!-- 例如：https://api.douban.com/v2/movie/top250?count=1 -->
+<template name="item1">
+  <view class='carlist'>
+    <navigator url="../item/item?id={{ item.id }}">
+      <view class="item">
+        <image class="poster" src="{{ item.images.small }}" />
+        <view class="meta">
+          <text class="title">编号:{{ item.title }}</text>
+          <text class="sub-title">车辆型号:{{ item.original_title }} ({{ item.year }})</text>
+          <view class="artists">上牌时间:
+            <block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block>
+          </view>
+          <view class="price">一口价:203万</view>
+        </view>
+        <view class="rating">
+          <text>{{ item.rating.average }}</text>
+        </view>
+      </view>
+      <view class='list-info'>
+        <view>人气指数:
+          <text>2</text>
+        </view>
+        <view>拨号人数:
+          <text>2</text>
+        </view>
+        <view>状态:
+          <text>在售</text>
+        </view>
+      </view>
+    </navigator>
+    <view>
+      <view wx:if="{{isSeller}}" class='sellerPhone'>联系卖家</view>
+      <view wx:else class='operation'>
+        <text bindtap='getOption' id="{{item.id}}">操作</text>
+        <text bindtap='getDelete'>删除</text>
+      </view>
+    </view>
+  </view>
+
+
+
+</template>
+
+<!-- 在北美电影排行的API中数据格式与普通的API不同，这里是渲染北美电影排行的数据 -->
+<!-- 例如：https://api.douban.com/v2/movie/us_box?count=1 -->
+<template name="item2">
+  <navigator url="../item/item?id={{ item.subject.id }}">
+    <view class="item">
+      <image class="poster" src="{{ item.subject.images.small }}"></image>
+      <view class="meta">
+        <text class="title">{{ item.subject.title }}</text>
+        <text class="sub-title">{{ item.subject.original_title }} ({{ item.subject.year }})</text>
+        <view class="artists">导演：
+          <block wx:for="{{ item.directors }}" wx:key="id"> {{ item.name }} </block>
+        </view>
+      </view>
+      <view class="rating">
+        <text>{{ item.subject.rating.average }}</text>
+      </view>
+    </view>
+  </navigator>
+</template>
+
+<!-- 电影列表组件 供每一个列表展示的页面使用 -->
+<template name="carlist">
+  <view class="list">
+    <template is="{{ item.subject ? 'item2' : 'item1' }}" data="{{ item,isSeller }}" wx:for="{{ cars }}" wx:key="id" />
+    <view class="tips">
+      <view wx:if="{{ hasMore }}">
+        <image src="/images/loading.gif" mode="aspectFill" />
+        <text>玩了命的加载中...</text>
+      </view>
+      <view wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+
+  </view>
+
+  <loading hidden="{{ !loading }}">加载中...</loading>
+</template>

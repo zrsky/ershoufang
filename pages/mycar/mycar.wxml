@@ -1,0 +1,38 @@
+<!--pages/mycar/mycar.wxml-->
+<import src="../common/carlist" />
+<view class='container'>
+<form bindsubmit='formSubmit'>
+
+  <view class='search'>
+    <view class='top'>
+      <input name="lowprice" type='number' class='list start'></input>~
+      <input name = "topprice" type='number' class='list end'></input>
+      <text>万</text>
+      <view class="weui-cells weui-cells_after-title startdate">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker name= "startdate" mode="date" value="{{startdate}}" start="2015-09-01" end="{{currentTime}}" bindchange="bindStartDateChange">
+              <view class="weui-input">{{startdate}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      ~
+      <view class="weui-cells weui-cells_after-title enddate">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+            <picker name = "enddate" mode="date" value="{{enddate}}" start="2015-09-01" end="{{currentTime}}" bindchange="bindEndDateChange">
+              <view class="weui-input">{{enddate}}</view>
+            </picker>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='search-bottom'>
+      <input name= "search" placeholder='输入编号或品牌搜索'></input>
+      <button form-type='submit'>确定</button>
+    </view>
+  </view>
+  </form>
+   <template is="carlist" data="{{cars,loading,hasMore,isSeller}}"/> 
+</view>
