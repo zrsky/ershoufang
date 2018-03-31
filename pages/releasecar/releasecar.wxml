@@ -115,7 +115,7 @@
       </view>
       <picker class="write" bindchange="bindColorChange" value="{{index}}" range="{{color}}">
         <view class="picker">
-          <input disabled class="write" value="{{color[index]}}" name="{{item.name}}"></input>
+          <input disabled class="write" value="{{color[index]}}" name="{{color_id}}"></input>
         </view>
       </picker>
     </view>
